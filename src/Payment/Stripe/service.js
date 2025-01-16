@@ -17,7 +17,7 @@ const stripeService={
                         product_data: {
                             name: `Order #${orders.join(',')}`, 
                         },
-                        unit_amount: orders.reduce((acc,order)=>acc+=Number(order.total),0) * 100, 
+                        unit_amount: Math.round(orders.reduce((acc,order)=>acc+=Number(order.total),0) * 100), 
                     },
                     quantity: 1,
                 },
